@@ -1,7 +1,7 @@
-:- [input1_maze].
+:- [input_maze].
 
 solve_maze :-
-  findall(ReversedSolution, path([start], ReversedSolution), Solutions), 
+  findall(ReversedSolution, path([start], ReversedSolution), Solutions),
   shortest_path(Solutions).
 
 path([finish|RestOfPath],[finish|RestOfPath]).
