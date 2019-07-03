@@ -6,8 +6,10 @@ cannibal :-
   reverse(Solution,OrderedSolution),
   show_states(OrderedSolution).
 
+solve_cannibal([state(0,0,r)|PriorStates],[state(0,0,r)|PriorStates]).
+
 show_states([]).
-show_states([state(M,C,Location)|RestStates]) :-
+show_states([state(M,C,Location)|LaterStates]) :-
   write_n_times('M',M),
   write_n_times('C',C),
   N is 6 - M - C,
@@ -18,7 +20,7 @@ show_states([state(M,C,Location)|RestStates]) :-
   write_n_times('M',RM),
   write_n_times('C',RC),
   nl,
-  show_states(RestStates).
+  show_states(LaterStates).
 
-draw_boat(l) :- write(' (____)     ')
-draw_boat(r) :- write('     (____) ')
+draw_boat(l) :- write(' (____)     ').
+draw_boat(r) :- write('     (____) ').
